@@ -1,13 +1,14 @@
 import './style.css'
 import './js/capture.js'
 import './js/basicfunctions'
-// import { defineConfig } from 'vite'
-// import vue from '@vitejs/plugin-vue'
-// // https://vitejs.dev/config/
-// export default defineConfig({
-//   plugins: [vue()],
-//   base:'/magnetic-field-logo/'
-// })
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue()],
+  base:'/MF-generate-tool/'
+})
+
 
 
 
