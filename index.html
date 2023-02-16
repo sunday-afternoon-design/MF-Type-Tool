@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+</head>
+
+<body>
+
+
+    <div id="editpanel">
+        <!-- <label>Bugs notes: <br>
+            1. This prototype might go blank sometimes, just refresh the page and it would work again.<br>2. Delete the characters in typebox one by one, and type not too fast.</label> -->
+        <!-- <br><br> -->
+        <!-- <br><br> -->
+        <br>
+        <label>Ⓜ TURN THE FIELD ON/OFF</label>
+        <input id="swithcer" type="checkbox" checked>
+
+        <br><br>
+        <label>Pointer X</label>
+        <input id="pointx" type="text" value="900"><br>
+        <label>Pointer Y</label>
+        <input id="pointy" type="text" value="900">
+
+
+        <br><br>
+        <label>Random</label>
+        <input type="button" value="generate a random logo" id="randomlogo">
+
+        <br><br>
+        <label>Text</label><br>
+        <textarea id="textarea" style="width: 127px; height: 128px;" placeholder="MAGNETIC FIELD">MAGNETIC FIELD</textarea>
+
+        <br><br>
+        <label>Size</label><br>
+        <input id="sizetextinput" type="text" value="100"><br>
+        <input id="fontsizeslider" type="range" min="50" max="200" value="100" class="slider" step="1" list="tickmarks">
+
+
+        <br><br>
+        <label>Slant</label><br>
+        <input id="slanttextinput" type="text" value="0.11"><br>
+        <input id="myStrengthRange" type="range" min="0" max="0.8" value="0.11" class="slider" step="0.01" list="tickmarks">
+
+        <br><br>
+        <label>Ramp</label><br>
+        <input id="fieldsizetextinput" type="text" value="9"><br>
+        <input id="myStrengthRangeweight" type="range" min="1" max="19" value="9" class="slider" step="0.1" list="tickmarks">
+
+
+        <datalist id="tickmarks">
+            <!-- <option value="1"></option> -->
+        </datalist>
+
+        <br><br>
+        <label>Weight A</label><br>
+        <input id="wAinput" type="text" value="100"><br>
+        <input id="rangea" type="range" min="100" max="900" value="400" class="slider" step="10">
+        <br><br>
+        <label>Weight B</label><br>
+        <input id="wBinput" type="text" value="900"><br>
+        <input id="rangeb" type="range" min="100" max="900" value="900" class="slider" step="10">
+
+        <br><br>
+        <label>Background</label><br>
+        <input type="color" id="bgcolorInput">
+
+        <br><br>
+        <label>Body</label><br>
+        <input type="color" id="fcolorInput">
+
+        <br><br>
+        <label>Ⓗ Hide the panel</label>
+        <br>
+        <label>Ⓢ Save the type</label>
+    </div>
+    <div id="space">
+        <div id="canvas">
+            <p id="mftest"></p>
+        </div>
+    </div>
+    <div id="background"></div>
+    <!-- <div class="target">
+        <span class="t1">
+          Hello
+        </span>
+
+    </div> -->
+    <script type="module" src="main.js" async defer></script>
+</body>
+
+</html>
