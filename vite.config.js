@@ -1,4 +1,4 @@
 export default {
     // config options
-    base: '/MF-generate-tool/'
+    base: '/MF-Type-Tool/'
 }
