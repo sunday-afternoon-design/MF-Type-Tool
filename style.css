@@ -78,8 +78,9 @@ span {
 }
 
 #editpanel {
-    margin: auto;
-    top: 2%;
+    /* margin: auto; */
+    /* top: 2%; */
+    left: 2%;
     font-size: 16px;
     z-index: 1;
     background-color: transparent;
@@ -101,6 +102,6 @@ span {
 
 .command-s {
     border: 1px solid #ccc;
-    padding: 2px 4px;
+    padding: 0px;
     border-radius: 4px;
 }

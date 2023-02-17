@@ -37,6 +37,9 @@ const strength = document.getElementById("myStrengthRange");
 const fontwa = document.getElementById("rangea");
 const fontwb = document.getElementById("rangeb");
 
+let hiddeneditpointer = false
+let editpointer = document.getElementById('editpointer');
+
 
 function initialize() {
     strtest = document.getElementById("textarea").value;
@@ -71,20 +74,29 @@ const tick = () => {
     }
 
     if (splitstrnum != splitstr.length) {
-        if (splitstrnum < splitstr.length) {
+        MFspan.innerHTML = ''
+
+        for (let i = 0; i < splitstrnum; i++) {
             let ic = document.createElement("span")
-            ic.innerHTML = strtest[splitstrnum]
+            ic.innerHTML = strtest[i]
             ic.classList.add("icsplus");
             MFspan.push(ic)
             p.append(ic)
         }
-        if (splitstrnum > splitstr.length) {
-            let num = splitstrnum - splitstr.length;
-            for (let i = 0; i < num; i++) {
-                p.children[0].remove();
-                num--;
-            }
-        }
+        // if (splitstrnum < splitstr.length) {
+        //     let ic = document.createElement("span")
+        //     ic.innerHTML = strtest[splitstrnum]
+        //     ic.classList.add("icsplus");
+        //     MFspan.push(ic)
+        //     p.append(ic)
+        // }
+        // if (splitstrnum > splitstr.length) {
+        //     let num = splitstrnum - splitstr.length;
+        //     for (let i = 0; i < num; i++) {
+        //         p.children[0].remove();
+        //         num--;
+        //     }
+        // }
     }
 
     if (switcher.checked) {
@@ -92,9 +104,20 @@ const tick = () => {
         y = mousey;
         mousexinput.value = mousex;
         mouseyinput.value = mousey;
+        editpointer.classList.add('hidden');
     } else {
         x = mousexinput.value
         y = mouseyinput.value
+        editpointer.classList.remove('hidden');
+    }
+
+    if (hiddeneditpanel) {
+        hidepanel.value = "Show the edit panel"
+        editpanel.classList.add('hidden');
+    } else {
+        hidepanel.value = "Hide the edit panel"
+        editpanel.classList.remove('hidden');
+
     }
 
     logo();
@@ -159,14 +182,21 @@ let editpanel = document.getElementById('editpanel');
 hidepanel.onclick = function() {
     console.log("hidepanel")
     hiddeneditpanel = !hiddeneditpanel
-    if (hiddeneditpanel) {
-        hidepanel.value = "Show the edit panel"
-        editpanel.classList.add('hidden');
-    } else {
-        hidepanel.value = "Hide the edit panel"
-        editpanel.classList.remove('hidden');
 
-    }
 };
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'KeyV' && (event.ctrlKey || event.metaKey)) {
+        hiddeneditpanel = !hiddeneditpanel
+        console.log(hiddeneditpanel)
+    };
+})
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'KeyB' && (event.ctrlKey || event.metaKey)) {
+        switcher.checked = !switcher.checked
+    };
+})
+
 
 tick()
