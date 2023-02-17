@@ -3,24 +3,27 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/mflogo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Magnetic Field Type Tool</title>
 </head>
 
 <body>
 
+
+    <label class="command-s">⌘ + S</label>
+    <br>
+    <label>Ⓜ TURN THE FIELD ON/OFF</label>
+    <input id="swithcer" type="checkbox" checked>
 
     <div id="editpanel">
         <!-- <label>Bugs notes: <br>
             1. This prototype might go blank sometimes, just refresh the page and it would work again.<br>2. Delete the characters in typebox one by one, and type not too fast.</label> -->
         <!-- <br><br> -->
         <!-- <br><br> -->
-        <br>
-        <label>Ⓜ TURN THE FIELD ON/OFF</label>
-        <input id="swithcer" type="checkbox" checked>
 
-        <br><br>
+
+        <br>
         <label>Pointer X</label>
         <input id="pointx" type="text" value="900"><br>
         <label>Pointer Y</label>
@@ -68,21 +71,23 @@
         <br><br>
         <label>Background</label><br>
         <input type="color" id="bgcolorInput">
-
-        <br><br>
+        <br>
         <label>Body</label><br>
         <input type="color" id="fcolorInput">
 
-        <br><br>
-        <label>Ⓗ Hide the panel</label>
-        <br>
-        <label>Ⓢ Save the type</label>
+
+
     </div>
-    <div id="space">
-        <div id="canvas">
-            <p id="mftest"></p>
-        </div>
+    <br><br>
+    <input type="button" value="Hide the edit panel" id="hidepanel">
+    <input type="button" value="Save PNG" id="savepng">
+
+
+    <!-- <div id="space"> -->
+    <div id="canvas">
+        <p id="mftest"></p>
     </div>
+    <!-- </div> -->
     <div id="background"></div>
     <!-- <div class="target">
         <span class="t1">

@@ -1,13 +1,13 @@
 import './style.css'
 import './js/capture.js'
 import './js/basicfunctions'
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [vue()],
-  base:'/MF-generate-tool/'
-})
+// import { defineConfig } from 'vite'
+// import vue from '@vitejs/plugin-vue'
+// // https://vitejs.dev/config/
+// export default defineConfig({
+//   plugins: [vue()],
+//   base:'/MF-generate-tool/'
+// })
 
 
 
@@ -20,10 +20,13 @@ let MFspan = [];
 const p = document.getElementById("mftest");
 
 const switcher = document.getElementById("swithcer");
-let randomlogo;
+let randomlogo = document.getElementById("randomlogo");
+let hidepanel = document.getElementById("hidepanel");
 
 let x = Math.random() * 1500;
 let y = Math.random() * 900 + 100;
+let randomx = Math.random() * 1500;
+let randomy = Math.random() * 900 + 100;
 let mousex, mousey;
 const mousexinput = document.getElementById("pointx");
 const mouseyinput = document.getElementById("pointy");
@@ -37,8 +40,6 @@ const fontwb = document.getElementById("rangeb");
 
 function initialize() {
     strtest = document.getElementById("textarea").value;
-    randomlogo = document.getElementById("randomlogo");
-
 
     splitstr = strtest.split('');
 
@@ -142,5 +143,29 @@ document.addEventListener('mousemove', (e) => {
     mousey = e.clientY;
 });
 
+randomlogo.onclick = function() {
+    console.log("randomlogo")
+    randomx = Math.random() * 1500;
+    randomy = Math.random() * 900 + 100;
+
+    mousexinput.value = Math.floor(randomx);
+    mouseyinput.value = Math.floor(randomy);
+};
+
+
+let hiddeneditpanel = false
+let editpanel = document.getElementById('editpanel');
+hidepanel.onclick = function() {
+    console.log("hidepanel")
+    hiddeneditpanel = !hiddeneditpanel
+    if (hiddeneditpanel) {
+        hidepanel.value = "Show the edit panel"
+        editpanel.classList.add('hidden');
+    } else {
+        hidepanel.value = "Hide the edit panel"
+        editpanel.classList.remove('hidden');
+
+    }
+};
 
 tick()

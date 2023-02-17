@@ -68,21 +68,8 @@ wBinput.addEventListener("input", function() {
 
 
 
-let hiddeneditpanel = false
-let editpanel = document.getElementById('editpanel');
 
-document.addEventListener('keydown', function(event) {
-    if (event.code === 'KeyH') {
-        console.log('h')
-        hiddeneditpanel = !hiddeneditpanel
-        if (hiddeneditpanel) {
-            editpanel.classList.add('hidden');
-        } else {
-            editpanel.classList.remove('hidden');
 
-        }
-    }
-})
 
 const switcher = document.getElementById("swithcer");
 document.addEventListener("keydown", (event) => {
@@ -90,13 +77,3 @@ document.addEventListener("keydown", (event) => {
         switcher.checked = !switcher.checked
     }
 })
-
-
-randomlogo.onclick = function() {
-    console.log("randomlogo")
-    randomx = Math.random() * 1500;
-    randomy = Math.random() * 900 + 100;
-
-    mousexinput.value = Math.floor(randomx);
-    mouseyinput.value = Math.floor(randomy);
-};

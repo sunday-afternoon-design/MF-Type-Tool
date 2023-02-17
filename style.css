@@ -29,7 +29,7 @@
 html,
 body {
     margin: 0;
-    padding: 0;
+    padding: 2px 2px;
     background-color: transparent;
     font-family: 'GTPlanar';
     color: #ffffff;
@@ -51,7 +51,7 @@ body {
     margin: auto;
     left: 5%;
     top: 30%;
-    width: 100%;
+    width: 80%;
     z-index: -1;
 }
 
@@ -97,4 +97,10 @@ span {
 
 .hidden {
     display: none;
+}
+
+.command-s {
+    border: 1px solid #ccc;
+    padding: 2px 4px;
+    border-radius: 4px;
 }

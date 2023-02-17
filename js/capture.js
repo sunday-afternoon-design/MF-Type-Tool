@@ -1,6 +1,7 @@
 // Create a canvas element
 var canvas = document.createElement('canvas');
 var ctx = canvas.getContext('2d');
+const savepng = document.getElementById('savepng')
 
 // Set the canvas size
 window.addEventListener('resize', function() {
@@ -19,9 +20,20 @@ navigator.mediaDevices.getDisplayMedia({ video: true }).then(function(stream) {
         video.play();
         // ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
     };
+    savepng.onclick = function() {
+        video.pause();
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
+        var imageData = canvas.toDataURL('image/png', 1);
+        var link = document.createElement('a');
+        link.download = 'MF-assets.png';
+        link.href = imageData;
+        link.click();
+
+        video.play();
+    };
     document.addEventListener('keydown', function(event) {
-        if (event.code === 'KeyS') {
+        if (event.code === 'KeyC' && (event.ctrlKey || event.metaKey)) {
 
             video.pause();
             ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
