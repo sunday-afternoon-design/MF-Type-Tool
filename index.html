@@ -6,37 +6,26 @@
     <link rel="icon" type="image/svg+xml" href="/MF-generate-tool/assets/mflogo-9eab565f.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magnetic Field Type Tool</title>
-  <script async type="module" crossorigin src="/MF-generate-tool/assets/index-def12e66.js"></script>
-  <link rel="stylesheet" href="/MF-generate-tool/assets/index-7a08d9b2.css">
+  <script async type="module" crossorigin src="/MF-generate-tool/assets/index-d9761cb6.js"></script>
+  <link rel="stylesheet" href="/MF-generate-tool/assets/index-41aa7e6d.css">
 </head>
 
 <body>
+    <label class="command-s">⌘B</label><span> </span><label>TURN THE FIELD ON/OFF</label><input id="swithcer" type="checkbox" checked><br>
 
-
-    <label class="command-s">⌘ + S</label>
     <br>
-    <label>Ⓜ TURN THE FIELD ON/OFF</label>
-    <input id="swithcer" type="checkbox" checked>
-
-    <div id="editpanel">
-        <!-- <label>Bugs notes: <br>
-            1. This prototype might go blank sometimes, just refresh the page and it would work again.<br>2. Delete the characters in typebox one by one, and type not too fast.</label> -->
-        <!-- <br><br> -->
-        <!-- <br><br> -->
-
-
-        <br>
+    <div id="editpointer">
         <label>Pointer X</label>
         <input id="pointx" type="text" value="900"><br>
         <label>Pointer Y</label>
         <input id="pointy" type="text" value="900">
-
-
         <br><br>
         <label>Random</label>
         <input type="button" value="generate a random logo" id="randomlogo">
-
         <br><br>
+    </div>
+    <div id="editpanel">
+
         <label>Text</label><br>
         <textarea id="textarea" style="width: 127px; height: 128px;" placeholder="MAGNETIC FIELD">MAGNETIC FIELD</textarea>
 
@@ -75,14 +64,14 @@
         <input type="color" id="bgcolorInput">
         <br>
         <label>Body</label><br>
-        <input type="color" id="fcolorInput">
+        <input type="color" id="fcolorInput"> <br> <br>
 
 
 
     </div>
-    <br><br>
-    <input type="button" value="Hide the edit panel" id="hidepanel">
-    <input type="button" value="Save PNG" id="savepng">
+
+    <label class="command-s">⌘V</label><span> </span><input type="button" value="Hide the edit panel" id="hidepanel"><br><br>
+    <label class="command-s">⌘C</label><span> </span><input type="button" value="Save PNG" id="savepng">
 
 
     <!-- <div id="space"> -->
