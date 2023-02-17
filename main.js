@@ -153,6 +153,7 @@ randomlogo.onclick = function() {
 };
 
 
+
 let hiddeneditpanel = false
 let editpanel = document.getElementById('editpanel');
 hidepanel.onclick = function() {

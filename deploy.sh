@@ -1,24 +1,29 @@
-# 发生任何错误时终止
+#!/usr/bin/env sh
+
+# abort on errors
 set -e
 
-# 构建
+# build
 npm run build
 
-# 进入输出产物文件夹
+# navigate into the build output directory
 cd dist
 
-# 如果你要部署到自定义域名
+# place .nojekyll to bypass Jekyll processing
+echo > .nojekyll
+
+# if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
 
 git init
+git checkout -B main
 git add -A
 git commit -m 'deploy'
 
-# 如果你要部署在 https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+# if you are deploying to https://<USERNAME>.github.io
+# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
 
-# 如果你要部署在 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:zooofzane/MF-generate-tool.git master:gh-pages
+# if you are deploying to https://<USERNAME>.github.io/<REPO>
+git push -f git@github.com:<USERNAME>/<REPO>.git main:gh-pages
 
 cd -
-
