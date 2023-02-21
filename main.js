@@ -74,29 +74,29 @@ const tick = () => {
     }
 
     if (splitstrnum != splitstr.length) {
-        MFspan.innerHTML = ''
+        // MFspan.innerHTML = ''
 
-        for (let i = 0; i < splitstrnum; i++) {
-            let ic = document.createElement("span")
-            ic.innerHTML = strtest[i]
-            ic.classList.add("icsplus");
-            MFspan.push(ic)
-            p.append(ic)
-        }
-        // if (splitstrnum < splitstr.length) {
+        // for (let i = 0; i < splitstrnum; i++) {
         //     let ic = document.createElement("span")
-        //     ic.innerHTML = strtest[splitstrnum]
+        //     ic.innerHTML = strtest[i]
         //     ic.classList.add("icsplus");
         //     MFspan.push(ic)
         //     p.append(ic)
         // }
-        // if (splitstrnum > splitstr.length) {
-        //     let num = splitstrnum - splitstr.length;
-        //     for (let i = 0; i < num; i++) {
-        //         p.children[0].remove();
-        //         num--;
-        //     }
-        // }
+        if (splitstrnum < splitstr.length) {
+            let ic = document.createElement("span")
+            ic.innerHTML = strtest[splitstrnum]
+            ic.classList.add("icsplus");
+            MFspan.push(ic)
+            p.append(ic)
+        }
+        if (splitstrnum > splitstr.length) {
+            let num = splitstrnum - splitstr.length;
+            for (let i = 0; i < num; i++) {
+                p.children[0].remove();
+                num--;
+            }
+        }
     }
 
     if (switcher.checked) {
